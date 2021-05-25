@@ -14,7 +14,7 @@ jobs:
     steps:
       -
         name: Checkout the repo
-        uses: actions/check
+        uses: actions/checkout@v2
       -
         name: Log in to the GitHub Docker Registy
         uses: docker/login-action@v1
