@@ -1,4 +1,11 @@
 terraform {
+    required_providers {
+        azurerm = {
+        source = "hashicorp/azurerm"
+        version = "2.60.0"
+        }
+    }
+
     backend "azurerm" {
       resource_group_name = "terraform-rg"
       storage_account_name = "statesterraform"
@@ -7,9 +14,7 @@ terraform {
     }
 }
 
-provider "azurerm" {
-  version = "2.60.0"
-}
+provider "azurerm" {}
 
 resource "random_string" "prefix" {
   length  = 10
