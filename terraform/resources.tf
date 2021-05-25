@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "azurerm" {
-  version = "~>2.0"
+  version = "2.60.0"
 }
 
 resource "random_string" "prefix" {
