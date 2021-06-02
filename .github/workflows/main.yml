@@ -1,4 +1,4 @@
-name: Build & Deploy Tonkotsu
+name: Build & Deploy Tonkotsu in WebApp for Containers
 
 on:
   push:
