@@ -1,4 +1,4 @@
-name: Build & Deploy Tonkotsu in WebApp for Containers
+name: Build & Deploy Tonkotsu
 
 on:
   push:
@@ -36,10 +36,10 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     env:
-      ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       TF_ACTIONS_WORKING_DIR: ./terraform
     defaults:
         run:
@@ -60,6 +60,7 @@ jobs:
         name: Terraform Init
         id: init
         run: terraform init
+        continue-on-error: true
       - 
         name: Terraform Validate
         id: validate
