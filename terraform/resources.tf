@@ -48,7 +48,7 @@ resource "azurerm_app_service" "dockerapp" {
   resource_group_name = azurerm_resource_group.group.name
   app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
 
-  app_settings {
+  app_settings = {
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
   }
 
