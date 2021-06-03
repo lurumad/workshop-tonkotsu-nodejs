@@ -39,9 +39,7 @@ resource "azurerm_app_service_plan" "appserviceplan" {
     size = "S1"
   }
 
-  properties {
-    reserved = true
-  }
+  reserved = true
 }
 
 resource "azurerm_app_service" "dockerapp" {
